@@ -1,0 +1,1269 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>浼橀€夌綉璐?路 Premium Mall</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+SC:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?   DESIGN TOKENS
+鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?*/
+:root {
+  --bg:     #0a0a0b;
+  --bg2:    #111113;
+  --bg3:    #1a1a1d;
+  --surf:   #1e1e21;
+  --surf2:  #252529;
+  --border: #2e2e33;
+  --text:   #f0ede8;
+  --text2:  #a09d97;
+  --text3:  #5e5c58;
+  --accent: #d4622a;
+  --acc2:   #e8a87c;
+  --gold:   #c9a96e;
+  --ok:     #4caf50;
+  --r: 16px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Noto Sans SC','Space Grotesk',sans-serif;
+  background:var(--bg);color:var(--text);
+  min-height:100vh;overflow-x:hidden;line-height:1.65;
+}
+
+/* 鈹€鈹€ SCROLLBAR 鈹€鈹€ */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+::-webkit-scrollbar-thumb:hover{background:var(--text3)}
+
+/* 鈹€鈹€ ANIMATIONS 鈹€鈹€ */
+@keyframes a{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
+@keyframes b{0%{background-position:-600px 0}100%{background-position:600px 0}}
+@keyframes c{from{transform:scale(1.05)}to{transform:scale(1.13)}}
+@keyframes d{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes e{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}
+@keyframes f{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
+@keyframes g{0%,100%{opacity:.4}50%{opacity:1}}
+@keyframes h{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+
+/* 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?   NAVIGATION
+鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?*/
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  height:64px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 48px;
+  background:rgba(10,10,11,.82);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(255,255,255,.05);
+  transition:background .3s;
+}
+.nav-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;font-weight:400;letter-spacing:.12em;
+  color:var(--text);text-decoration:none;
+}
+.nav-logo em{font-style:italic;color:var(--accent)}
+.nav-links{display:flex;gap:40px;align-items:center}
+.nav-links a{
+  font-size:12px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--text2);text-decoration:none;
+  transition:color .25s;position:relative;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-4px;left:0;right:0;
+  height:1px;background:var(--accent);
+  transform:scaleX(0);transition:transform .3s;
+}
+.nav-links a:hover{color:var(--text)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-actions{display:flex;gap:12px;align-items:center}
+.nav-search{
+  width:36px;height:36px;border-radius:50%;
+  border:1px solid var(--border);background:transparent;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  color:var(--text2);transition:all .25s;
+}
+.nav-search:hover{border-color:var(--accent);color:var(--accent)}
+.nav-search svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8}
+.badge{
+  position:absolute;top:-4px;right:-4px;
+  background:var(--accent);color:white;
+  font-size:9px;font-weight:700;
+  min-width:16px;height:16px;border-radius:100px;
+  display:flex;align-items:center;justify-content:center;
+  border:2px solid var(--bg);
+}
+.btn-icon{
+  width:36px;height:36px;border-radius:50%;
+  border:1px solid var(--border);background:transparent;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  color:var(--text2);transition:all .25s;position:relative;
+}
+.btn-icon:hover{border-color:var(--text);color:var(--text)}
+.btn-icon svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.btn-primary{
+  padding:8px 22px;border-radius:100px;
+  background:var(--accent);color:white;
+  font-size:12px;font-weight:500;letter-spacing:.04em;
+  border:none;cursor:pointer;transition:all .25s;
+  text-decoration:none;display:inline-flex;align-items:center;gap:6px;
+}
+.btn-primary:hover{background:#e06d30;transform:translateY(-1px);box-shadow:0 8px 24px rgba(212,98,42,.35)}
+.btn-ghost{
+  padding:8px 22px;border-radius:100px;
+  background:transparent;color:var(--text2);
+  font-size:12px;font-weight:500;letter-spacing:.04em;
+  border:1px solid var(--border);cursor:pointer;transition:all .25s;
+  text-decoration:none;display:inline-flex;align-items:center;gap:6px;
+}
+.btn-ghost:hover{border-color:var(--text);color:var(--text)}
+
+/* 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?   HERO
+鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?*/
+.hero{
+  position:relative;height:100vh;min-height:680px;
+  display:flex;align-items:center;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=2000&q=85') center/cover no-repeat;
+  animation:c 30s ease-in-out infinite alternate;
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(105deg,rgba(10,10,11,.88) 0%,rgba(10,10,11,.55) 45%,rgba(10,10,11,.1) 100%);
+}
+.hero-content{
+  position:relative;z-index:2;
+  padding:0 80px;max-width:680px;
+  animation:a 1.2s cubic-bezier(.16,1,.3,1) both;
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--acc2);margin-bottom:28px;
+  animation:a 1.2s .1s cubic-bezier(.16,1,.3,1) both;
+}
+.hero-tag::before{content:'';width:24px;height:1px;background:var(--acc2)}
+.hero-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(52px,7.5vw,96px);
+  font-weight:300;line-height:1.0;
+  color:var(--text);margin-bottom:24px;
+  animation:a 1.2s .2s cubic-bezier(.16,1,.3,1) both;
+}
+.hero-title em{font-style:italic;color:var(--acc2)}
+.hero-desc{
+  font-size:15px;font-weight:300;color:var(--text2);line-height:1.8;
+  max-width:440px;margin-bottom:44px;
+  animation:a 1.2s .3s cubic-bezier(.16,1,.3,1) both;
+}
+.hero-actions{
+  display:flex;gap:14px;flex-wrap:wrap;
+  animation:a 1.2s .4s cubic-bezier(.16,1,.3,1) both;
+}
+.hero-actions .btn-primary{background:var(--accent);padding:14px 36px;font-size:14px}
+.hero-actions .btn-ghost{color:var(--text);border-color:rgba(255,255,255,.2)}
+.hero-actions .btn-ghost:hover{border-color:var(--text);background:rgba(255,255,255,.06)}
+.hero-scroll{
+  position:absolute;bottom:40px;left:50%;transform:translateX(-50%);
+  z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;
+  color:rgba(240,237,232,.3);font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+  animation:d 3s ease-in-out infinite;
+}
+.hero-scroll svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5}
+.hero-indicators{
+  position:absolute;right:56px;top:50%;transform:translateY(-50%);
+  display:flex;flex-direction:column;gap:10px;z-index:2;
+}
+.hero-ind{width:2px;height:24px;background:rgba(255,255,255,.15);border-radius:2px;cursor:pointer;transition:all .3s}
+.hero-ind.active{background:var(--accent);height:40px}
+
+/* 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?   MARQUEE BAR
+鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?*/
+.marquee-bar{
+  background:var(--surf);border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:12px 0;overflow:hidden;white-space:nowrap;
+}
+.marquee-inner{
+  display:inline-flex;gap:48px;animation:m 30s linear infinite;
+  font-size:11px;letter-spacing:.12em;color:var(--text3);text-transform:uppercase;
+}
+@keyframes m{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.mb{display:inline-flex;align-items:center;gap:8px}
+.mb::before{content:'鉁?;color:var(--accent);font-size:8px}
+
+/* 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?   SECTION STYLES
+鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?*/
+.section{padding:112px 56px}
+.section-label{
+  font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:10px;
+}
+.section-label::after{content:'';flex:1;max-width:40px;height:1px;background:var(--accent)}
+.section-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(34px,5vw,58px);font-weight:300;line-height:1.08;color:var(--text);margin-bottom:8px;
+}
+.section-title em{font-style:italic;color:var(--accent)}
+.section-desc{font-size:13px;color:var(--text3);margin-bottom:56px}
+.section-header{
+  display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;
+}
+.section-more{
+  font-size:12px;color:var(--text3);text-decoration:none;
+  border-bottom:1px solid var(--border);padding-bottom:2px;transition:all .2s;
+  display:flex;align-items:center;gap:6px;
+}
+.section-more:hover{color:var(--text);border-color:var(--text)}
+
+/* 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?   CATEGORY CARDS
+鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?*/
+.cat-row{
+  display:flex;gap:2px;overflow-x:auto;padding-bottom:8px;
+  scrollbar-width:none;
+}
+.cat-row::-webkit-scrollbar{display:none}
+.cat-card{
+  flex-shrink:0;width:140px;border-radius:var(--r);
+  border:1px solid var(--border);background:var(--surf);
+  cursor:pointer;transition:all .4s cubic-bezier(.34,1.3,.64,1);
+  overflow:hidden;position:relative;
+}
+.cat-card:hover{border-color:var(--accent);transform:translateY(-8px);box-shadow:0 24px 60px rgba(212,98,42,.18)}
+.cat-img{width:100%;aspect-ratio:1;object-fit:cover;display:block;transition:transform .6s}
+.cat-card:hover .cat-img{transform:scale(1.06)}
+.cat-info{padding:14px 12px 16px}
+.cat-name{font-size:13px;font-weight:500;color:var(--text);margin-bottom:3px}
+.cat-count{font-size:11px;color:var(--text3)}
+
+/* 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?   PRODUCT GRID
+鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?*/
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+.pcard{
+  background:var(--surf);border-radius:var(--r);overflow:hidden;
+  cursor:pointer;
+  transition:all .4s cubic-bezier(.34,1.3,.64,1);
+  animation:a .6s cubic-bezier(.16,1,.3,1) both;
+}
+.pcard:hover{transform:translateY(-6px);box-shadow:0 28px 72px rgba(0,0,0,.5);z-index:1}
+.pcard:hover .pimg{transform:scale(1.05)}
+.piw{position:relative;overflow:hidden;aspect-ratio:1;background:var(--bg2)}
+.pimg{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.25,.46,.45,.94)}
+.p-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(10,10,11,.7) 0%,transparent 50%);
+  opacity:0;transition:opacity .3s;
+}
+.pcard:hover .p-overlay{opacity:1}
+.p-actions{
+  position:absolute;bottom:16px;left:16px;right:16px;
+  display:flex;gap:8px;opacity:0;transform:translateY(8px);
+  transition:all .3s cubic-bezier(.34,1.3,.64,1);
+}
+.pcard:hover .p-actions{opacity:1;transform:translateY(0)}
+.pact{
+  flex:1;padding:8px;border-radius:8px;
+  background:rgba(212,98,42,.92);color:white;
+  font-size:11px;font-weight:500;cursor:pointer;border:none;
+  display:flex;align-items:center;justify-content:center;gap:4px;
+  transition:background .2s;
+  backdrop-filter:blur(8px);
+}
+.pact:hover{background:var(--accent)}
+.pact svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+.pbadge{
+  position:absolute;top:12px;left:12px;
+  font-size:9px;font-weight:600;letter-spacing:.08em;
+  padding:3px 10px;border-radius:100px;
+}
+.pbadge.sk{background:var(--accent);color:white}
+.pbadge.hot{background:#c0392b;color:white}
+.pbadge.new{background:var(--surf2);color:var(--text);border:1px solid var(--border)}
+.ppfav{
+  position:absolute;top:12px;right:12px;
+  width:32px;height:32px;border-radius:50%;
+  background:rgba(10,10,11,.6);border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transform:scale(.7);transition:all .3s cubic-bezier(.34,1.3,.64,1);
+  backdrop-filter:blur(8px);
+}
+.pcard:hover .ppfav{opacity:1;transform:scale(1)}
+.ppfav svg{width:13px;height:13px;fill:none;stroke:var(--text);stroke-width:2;transition:stroke .2s}
+.ppfav.on svg{stroke:#c0392b;fill:#c0392b}
+.pinfo{padding:18px 18px 20px;background:var(--surf)}
+.pcat{font-size:10px;color:var(--text3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.pname{font-size:14px;font-weight:400;color:var(--text);line-height:1.45;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.9em}
+.prating{display:flex;align-items:center;gap:5px;margin-bottom:12px}
+.pstars{color:#d4a017;font-size:10px;letter-spacing:1px}
+.prc{font-size:10px;color:var(--text3)}
+.pbottom{display:flex;justify-content:space-between;align-items:flex-end}
+.pprice{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--acc2);line-height:1}
+.porig{font-size:11px;color:var(--text3);text-decoration:line-through;margin-left:4px;font-family:'Noto Sans SC',sans-serif}
+.pstock{font-size:10px;color:var(--text3);margin-top:6px}
+.pstock span{color:#4caf50}
+
+/* 鈹€鈹€ SKELETON 鈹€鈹€ */
+.sk{
+  background:linear-gradient(90deg,var(--surf) 25%,var(--surf2) 50%,var(--surf) 75%);
+  background-size:600px 100%;animation:b 1.8s ease-in-out infinite;border-radius:8px;
+}
+
+/* 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?   SECKILL BANNER
+鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?*/
+.skban{
+  padding:96px 56px;
+  background:linear-gradient(135deg,#1a0e08 0%,#2a1508 40%,#0f0a06 100%);
+  position:relative;overflow:hidden;
+}
+.skban::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 70% 50%,rgba(212,98,42,.15) 0%,transparent 65%);
+  pointer-events:none;
+}
+.skban::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(to right,transparent,rgba(212,98,42,.4),transparent);
+}
+.sk-l{display:grid;grid-template-columns:1fr 1.4fr;gap:72px;align-items:center;max-width:1300px;margin:0 auto}
+.sk-intro{}
+.sk-tag{display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--acc2);margin-bottom:20px}
+.sk-tag::before{content:'馃敟'}
+.sk-title{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,5vw,62px);font-weight:300;color:var(--text);margin-bottom:14px}
+.sk-title em{font-style:italic;color:var(--accent)}
+.sk-sub{font-size:13px;color:var(--text3);margin-bottom:36px}
+.cd{display:flex;gap:12px;margin-bottom:36px}
+.cdb{
+  background:rgba(212,98,42,.15);border:1px solid rgba(212,98,42,.25);
+  border-radius:10px;padding:14px 18px;text-align:center;min-width:72px;
+  backdrop-filter:blur(12px);
+}
+.cdn{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:600;color:var(--acc2);line-height:1}
+.cdl{font-size:9px;color:var(--text3);letter-spacing:.08em;margin-top:4px}
+.sk-grid{display:flex;flex-direction:column;gap:12px}
+.skcard{
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);
+  border-radius:12px;padding:14px;display:flex;gap:14px;align-items:center;
+  cursor:pointer;transition:all .3s;backdrop-filter:blur(12px);
+}
+.skcard:hover{border-color:rgba(212,98,42,.35);background:rgba(255,255,255,.05);transform:translateX(-6px)}
+.skimg{width:68px;height:68px;border-radius:8px;object-fit:cover;flex-shrink:0;background:var(--bg2)}
+.skinfo{flex:1;min-width:0}
+.skn{font-size:13px;font-weight:400;color:var(--text);margin-bottom:5px;line-height:1.35}
+.skprice{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--accent);font-weight:600}
+.skor{font-size:11px;color:var(--text3);text-decoration:line-through;margin-left:5px}
+.skst{font-size:11px;color:var(--text3);margin-top:3px}
+.skst span{color:#f36;color;font-weight:500}
+
+/* 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?   AI SECTION
+鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?*/
+.aisec{
+  padding:96px 56px;
+  background:linear-gradient(160deg,#080f0a 0%,#0f1f12 50%,#080f0a 100%);
+  position:relative;overflow:hidden;
+}
+.aisec::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 30% 60%,rgba(76,175,80,.07) 0%,transparent 60%);
+  pointer-events:none;
+}
+.aisec .section-label{color:#6db878}
+.aisec .section-label::after{background:#6db878}
+.aigrid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px}
+.aicard{
+  background:var(--surf);border-radius:var(--r);overflow:hidden;
+  cursor:pointer;transition:all .35s cubic-bezier(.34,1.3,.64,1);
+}
+.aicard:hover{border-color:rgba(109,184,120,.4);transform:translateY(-6px);box-shadow:0 20px 56px rgba(0,0,0,.4)}
+.aicard-img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.aibody{padding:14px;background:var(--surf)}
+.aicat{font-size:10px;color:#6db878;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px}
+.aipname{font-size:12px;color:var(--text);line-height:1.4;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.8em}
+.aiprice{font-family:'Cormorant Garamond',serif;font-size:17px;color:#6db878;font-weight:600}
+.aitag{display:inline-flex;align-items:center;gap:4px;font-size:10px;color:#6db878;border:1px solid rgba(109,184,120,.25);padding:2px 8px;border-radius:100px;margin-top:7px}
+
+/* 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?   BRAND BANNER
+鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?*/
+.brand-banner{
+  padding:72px 56px;text-align:center;
+  background:var(--surf);border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+}
+.brand-logos{display:flex;justify-content:center;align-items:center;gap:64px;flex-wrap:wrap;margin-top:28px;opacity:.3}
+.brand-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;letter-spacing:.1em;color:var(--text2)}
+
+/* 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?   FOOTER
+鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?*/
+footer{
+  background:var(--bg2);padding:80px 56px 32px;border-top:1px solid var(--border);
+}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:56px;max-width:1200px;margin:0 auto}
+.ff{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--text);margin-bottom:14px}
+.ff em{font-style:italic;color:var(--accent)}
+.fdesc{font-size:12px;color:var(--text3);line-height:1.8;max-width:260px}
+.fct{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);margin-bottom:16px}
+.flinks{display:flex;flex-direction:column;gap:9px}
+.flinks a{font-size:12px;color:var(--text3);text-decoration:none;transition:color .2s}
+.flinks a:hover{color:var(--text)}
+.fbottom{max-width:1200px;margin:60px auto 0;padding-top:28px;border-top:1px solid var(--border);font-size:11px;color:var(--text3);text-align:center}
+
+/* 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?   MODAL / OVERLAY
+鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?*/
+.ov{
+  position:fixed;inset:0;z-index:500;
+  background:rgba(10,10,11,.75);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transition:opacity .3s;padding:24px;
+}
+.ov.active{opacity:1;pointer-events:all}
+.mo{
+  background:var(--surf2);border-radius:20px;
+  width:100%;max-width:960px;max-height:90vh;overflow-y:auto;
+  border:1px solid var(--border);
+  transform:scale(.92) translateY(20px);
+  transition:transform .4s cubic-bezier(.34,1.3,.64,1);
+}
+.ov.active .mo{transform:scale(1) translateY(0)}
+.moh{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:24px 32px;border-bottom:1px solid var(--border);position:sticky;top:0;
+  background:var(--surf2);z-index:1;border-radius:20px 20px 0 0;
+}
+.mot{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--text)}
+.moc{
+  width:34px;height:34px;border-radius:50%;
+  border:1px solid var(--border);background:transparent;
+  cursor:pointer;font-size:18px;color:var(--text2);
+  display:flex;align-items:center;justify-content:center;transition:all .2s;
+}
+.moc:hover{background:var(--surf);color:var(--text)}
+.mob{padding:32px}
+
+/* 鈹€鈹€ DETAIL 鈹€鈹€ */
+.dg{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.diw{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:1;background:var(--bg2)}
+.dimg{width:100%;height:100%;object-fit:cover;display:block}
+.dname{font-family:'Cormorant Garamond','Noto Sans SC',serif;font-size:30px;font-weight:400;margin-bottom:12px;line-height:1.2}
+.ddesc{font-size:13px;color:var(--text2);line-height:1.8;margin-bottom:24px}
+.dpw{margin-bottom:24px}
+.dp{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:600;color:var(--accent);line-height:1}
+.dorig{font-size:15px;color:var(--text3);text-decoration:line-through;margin-left:8px;font-family:'Noto Sans SC'}
+.dmeta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:28px}
+.dmeta-i{background:var(--bg2);border-radius:10px;padding:14px 16px;font-size:11px;color:var(--text2)}
+.dmeta-i strong{display:block;font-size:15px;color:var(--text);margin-top:3px}
+.dacts{display:flex;gap:10px}
+.dacts .btn-primary{flex:1;justify-content:center;padding:14px;font-size:14px}
+.dacts .btn-ghost{flex:1;justify-content:center;padding:14px;font-size:14px}
+
+/* 鈹€鈹€ CART DRAWER 鈹€鈹€ */
+.cov{position:fixed;inset:0;z-index:500;background:rgba(10,10,11,.6);backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s}
+.cov.active{opacity:1;pointer-events:all}
+.cdr{
+  position:fixed;top:0;right:0;bottom:0;width:440px;max-width:94vw;
+  background:var(--surf2);z-index:501;
+  border-left:1px solid var(--border);
+  transform:translateX(100%);transition:transform .4s cubic-bezier(.25,.46,.45,.94);
+  display:flex;flex-direction:column;
+}
+.cdr.active{transform:translateX(0)}
+.cit{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--border);animation:e .3s ease-out}
+.cit:last-child{border-bottom:none}
+.ciimg{width:72px;height:72px;border-radius:10px;object-fit:cover;flex-shrink:0;background:var(--bg2)}
+.ciinfo{flex:1;min-width:0}
+.ciname{font-size:13px;color:var(--text);margin-bottom:4px;line-height:1.35}
+.ciprice{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--acc2)}
+.cqty{display:flex;align-items:center;gap:10px;margin-top:8px}
+.qb{width:26px;height:26px;border-radius:50%;border:1px solid var(--border);background:transparent;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;color:var(--text2);transition:all .2s}
+.qb:hover{border-color:var(--text);color:var(--text)}
+.qn{font-size:13px;font-weight:500;min-width:20px;text-align:center}
+.cdel{background:none;border:none;cursor:pointer;color:var(--text3);font-size:18px;transition:color .2s;align-self:flex-start;padding:2px}
+.cdel:hover{color:#c0392b}
+.cempty{text-align:center;padding:64px 20px}
+.cempty-icon{font-size:48px;opacity:.2;margin-bottom:14px}
+.cempty p{font-size:13px;color:var(--text3)}
+.cfoot{padding:20px 24px;border-top:1px solid var(--border);background:var(--surf)}
+.ctrow{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px}
+.ctlabel{font-size:12px;color:var(--text2)}
+.ctprice{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--accent)}
+.ctip{font-size:11px;color:var(--text3);margin-bottom:16px}
+
+/* 鈹€鈹€ AUTH MODAL 鈹€鈹€ */
+.am{max-width:440px}
+.atabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:28px}
+.atab{flex:1;padding:12px;text-align:center;font-size:13px;font-weight:500;color:var(--text3);border:none;background:none;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .2s}
+.atab.active{color:var(--text);border-bottom-color:var(--accent)}
+.fg{margin-bottom:16px}
+.fl{display:block;font-size:11px;font-weight:500;color:var(--text2);margin-bottom:7px;letter-spacing:.04em}
+.fi{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:10px;background:var(--bg2);font-size:13px;color:var(--text);outline:none;transition:border-color .2s;background:var(--surf);font-family:'Noto Sans SC',sans-serif}
+.fi:focus{border-color:var(--accent)}
+.fi::placeholder{color:var(--text3)}
+.frow{display:flex;gap:8px}
+.frow .fi{flex:1}
+.bs{padding:11px 14px;border-radius:10px;background:var(--surf);border:1.5px solid var(--border);font-size:11px;font-weight:500;cursor:pointer;white-space:nowrap;transition:all .2s;color:var(--text2);font-family:'Noto Sans SC',sans-serif}
+.bs:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+.bs:disabled{opacity:.4;cursor:not-allowed}
+.asub{width:100%;padding:14px;border-radius:100px;background:var(--accent);color:white;font-size:13px;font-weight:500;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .25s;font-family:'Noto Sans SC',sans-serif}
+.asub:hover{background:#e06d30}
+.atip{font-size:11px;color:var(--text3);text-align:center;margin-top:14px;line-height:1.7}
+.atip a{color:var(--accent);text-decoration:none}
+
+/* 鈹€鈹€ USER MENU 鈹€鈹€ */
+.uav{width:34px;height:34px;border-radius:50%;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.uav:hover{transform:scale(1.06);box-shadow:0 0 0 3px rgba(212,98,42,.2)}
+.udr{position:absolute;top:calc(100%+12px);right:0;background:var(--surf2);border:1px solid var(--border);border-radius:14px;padding:8px;min-width:190px;box-shadow:0 24px 56px rgba(0,0,0,.5);opacity:0;pointer-events:none;transform:translateY(-8px);transition:all .22s ease-out}
+.udr.active{opacity:1;pointer-events:all;transform:translateY(0)}
+.udi{padding:10px 14px;border-radius:8px;font-size:12px;color:var(--text2);cursor:pointer;transition:background .15s;display:flex;align-items:center;gap:8px}
+.udi:hover{background:var(--surf);color:var(--text)}
+.udi.dg:hover{background:rgba(192,57,43,.12);color:#c0392b}
+.ud-div{height:1px;background:var(--border);margin:6px 0}
+.ud-info{padding:10px 14px 12px;border-bottom:1px solid var(--border);margin-bottom:6px}
+.ud-email{font-size:12px;font-weight:500;color:var(--text)}
+.ud-id{font-size:10px;color:var(--text3);margin-top:2px}
+
+/* 鈹€鈹€ TOAST 鈹€鈹€ */
+.tc{position:fixed;bottom:32px;left:50%;transform:translateX(-50%);z-index:9999;display:flex;flex-direction:column;gap:8px;align-items:center;pointer-events:none}
+.t{background:var(--surf);color:var(--text);padding:10px 26px;border-radius:100px;font-size:12px;font-weight:400;border:1px solid var(--border);white-space:nowrap;box-shadow:0 8px 32px rgba(0,0,0,.4);opacity:0;transform:translateY(12px);animation:ff .3s ease-out forwards}
+.t.s{border-color:#4caf50;color:#4caf50}
+.t.e{border-color:#c0392b;color:#c0392b}
+@keyframes ff{to{opacity:1;transform:translateY(0)}}
+@keyframes gg{to{opacity:0;transform:translateY(-8px)}}
+
+/* 鈹€鈹€ ORDER SUCCESS 鈹€鈹€ */
+.osi{font-size:60px;text-align:center;margin-bottom:14px;animation:d 2s ease-in-out infinite}
+.osti{font-family:'Cormorant Garamond',serif;font-size:26px;text-align:center;margin-bottom:8px}
+.oss{font-size:12px;color:var(--text3);text-align:center;margin-bottom:22px}
+.odc{background:var(--bg2);border-radius:12px;padding:18px;margin-bottom:20px}
+.odr{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:12px}
+.odr:last-child{border-bottom:none}
+.odl{color:var(--text3)}
+.odv{font-weight:500;color:var(--text)}
+
+/* 鈹€鈹€ RESPONSIVE 鈹€鈹€ */
+@media(max-width:1100px){
+  .pgrid{grid-template-columns:repeat(3,1fr)}
+  .aigrid{grid-template-columns:repeat(3,1fr)}
+  .fg{grid-template-columns:1fr 1fr}
+  .sk-l{grid-template-columns:1fr}
+  .dg{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  nav{padding:0 20px}
+  .section{padding:64px 20px}
+  .hero-content{padding:0 28px}
+  .pgrid{grid-template-columns:repeat(2,1fr);gap:2px}
+  .aigrid{grid-template-columns:repeat(2,1fr)}
+  .fg{grid-template-columns:1fr;gap:32px}
+  .brand-banner{padding:48px 20px}
+  .skban{padding:64px 20px}
+  .aisec{padding:64px 20px}
+}
+</style>
+</head>
+<body>
+
+<!-- 鈹€鈹€ NAV 鈹€鈹€ -->
+<nav>
+  <a href="#" class="nav-logo">浼橀€?em>路</em>缃戣喘</a>
+  <div class="nav-links">
+    <a href="#cat">鍒嗙被</a>
+    <a href="#prods">绮鹃€?/a>
+    <a href="#sk">绉掓潃</a>
+    <a href="#ai">AI 鎺ㄨ崘</a>
+    <a href="#ft">鍏充簬</a>
+  </div>
+  <div class="nav-actions">
+    <button class="nav-search" title="鎼滅储">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    </button>
+    <div id="authA"></div>
+    <button class="btn-icon" onclick="openCart()" title="璐墿杞?>
+      <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <span class="badge" id="cBadge" style="display:none">0</span>
+    </button>
+  </div>
+</nav>
+
+<!-- 鈹€鈹€ HERO 鈹€鈹€ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">绮鹃€夊ソ鐗?路 鍝佽川鐢熸椿</div>
+    <h1 class="hero-title">鍙戠幇鐢熸椿<br>涔嬬編锛?em>姝ゅ埢</em></h1>
+    <p class="hero-desc">姹囪仛鍏ㄧ悆浼樿川鍝佺墝锛屽尃蹇冪攧閫夋瘡涓€浠跺晢鍝併€?br>涓嶅彧鏄喘鐗╋紝鏄彂鐜版洿濂界敓娲绘柟寮忕殑寮€濮嬨€?/p>
+    <div class="hero-actions">
+      <a href="#prods" class="btn-primary">鎺㈢储绮鹃€?/a>
+      <a href="#sk" class="btn-ghost">闄愭椂绉掓潃</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    scroll
+  </div>
+</section>
+
+<!-- 鈹€鈹€ MARQUEE 鈹€鈹€ -->
+<div class="marquee-bar">
+  <div class="marquee-inner">
+    <span class="mb">鍏ㄥ満鍏嶈繍璐?/span><span class="mb">鏂板搧涓婂競</span>
+    <span class="mb">闄愭椂鐗规儬</span><span class="mb">AI 鏅鸿兘鎺ㄨ崘</span>
+    <span class="mb">鍝佽川淇濊瘉</span><span class="mb">7澶╂棤鐞嗙敱閫€鎹?/span>
+    <span class="mb">鍏ㄥ満鍏嶈繍璐?/span><span class="mb">鏂板搧涓婂競</span>
+    <span class="mb">闄愭椂鐗规儬</span><span class="mb">AI 鏅鸿兘鎺ㄨ崘</span>
+    <span class="mb">鍝佽川淇濊瘉</span><span class="mb">7澶╂棤鐞嗙敱閫€鎹?/span>
+  </div>
+</div>
+
+<!-- 鈹€鈹€ CATEGORIES 鈹€鈹€ -->
+<section class="section" id="cat">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Browse by Category</div>
+      <h2 class="section-title">鍟嗗搧<em>鍒嗙被</em></h2>
+      <p class="section-desc">鎸夐渶鎸戦€夛紝鍙戠幇蹇冧华濂界墿</p>
+    </div>
+    <a href="#" class="section-more">鏌ョ湅鍏ㄩ儴 鈫?/a>
+  </div>
+  <div class="cat-row" id="catR">
+    <div class="sk" style="width:140px;height:180px"></div>
+    <div class="sk" style="width:140px;height:180px"></div>
+    <div class="sk" style="width:140px;height:180px"></div>
+    <div class="sk" style="width:140px;height:180px"></div>
+    <div class="sk" style="width:140px;height:180px"></div>
+    <div class="sk" style="width:140px;height:180px"></div>
+  </div>
+</section>
+
+<!-- 鈹€鈹€ PRODUCTS 鈹€鈹€ -->
+<section class="section" id="prods" style="background:var(--bg2)">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Featured Products</div>
+      <h2 class="section-title">绮鹃€?em>濂界墿</em></h2>
+      <p class="section-desc">缂栬緫涓ラ€夛紝鍝佽川淇濊瘉</p>
+    </div>
+    <a href="#" class="section-more">鏇村鍟嗗搧 鈫?/a>
+  </div>
+  <div class="pgrid" id="pG">
+    <div class="sk" style="height:400px"></div><div class="sk" style="height:400px"></div>
+    <div class="sk" style="height:400px"></div><div class="sk" style="height:400px"></div>
+    <div class="sk" style="height:400px"></div><div class="sk" style="height:400px"></div>
+    <div class="sk" style="height:400px"></div><div class="sk" style="height:400px"></div>
+  </div>
+</section>
+
+<!-- 鈹€鈹€ SECKILL 鈹€鈹€ -->
+<section class="skban" id="sk">
+  <div class="sk-l">
+    <div class="sk-intro">
+      <div class="sk-tag">Flash Sale</div>
+      <h2 class="sk-title">闄愭椂<em>绉掓潃</em></h2>
+      <p class="sk-sub">姣忔棩 10:00 / 20:00 鍑嗘椂寮€鎶紝浣庤嚦 5 鎶?/p>
+      <div class="cd">
+        <div class="cdb"><div class="cdn" id="cd-h">00</div><div class="cdl">鏃?/div></div>
+        <div class="cdb"><div class="cdn" id="cd-m">00</div><div class="cdl">鍒?/div></div>
+        <div class="cdb"><div class="cdn" id="cd-s">00</div><div class="cdl">绉?/div></div>
+      </div>
+      <a href="#prods" class="btn-primary">绔嬪嵆鎶㈣喘 鈫?/a>
+    </div>
+    <div class="sk-grid" id="skG">
+      <div class="sk" style="height:96px;border-radius:12px"></div>
+      <div class="sk" style="height:96px;border-radius:12px"></div>
+      <div class="sk" style="height:96px;border-radius:12px"></div>
+      <div class="sk" style="height:96px;border-radius:12px"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 鈹€鈹€ AI RECOMMEND 鈹€鈹€ -->
+<section class="aisec" id="ai">
+  <div class="section-header">
+    <div>
+      <div class="section-label">鉁?DeepSeek AI</div>
+      <h2 class="section-title">鏅鸿兘<em>鎺ㄨ崘</em></h2>
+      <p class="section-desc" id="aiD">鐧诲綍鍚庤В閿佸熀浜庝綘鍋忓ソ鐨?AI 鍟嗗搧鎺ㄨ崘</p>
+    </div>
+    <a href="javascript:;" class="section-more" id="aiR" onclick="loadAI()" style="display:none;color:#6db878;border-color:rgba(109,184,120,.3)">鎹竴鎵?鈫?/a>
+  </div>
+  <div class="aigrid" id="aiG">
+    <div class="sk" style="height:260px;border-radius:var(--r)"></div>
+    <div class="sk" style="height:260px;border-radius:var(--r)"></div>
+    <div class="sk" style="height:260px;border-radius:var(--r)"></div>
+    <div class="sk" style="height:260px;border-radius:var(--r)"></div>
+    <div class="sk" style="height:260px;border-radius:var(--r)"></div>
+  </div>
+</section>
+
+<!-- 鈹€鈹€ BRAND 鈹€鈹€ -->
+<div class="brand-banner">
+  <div class="section-label" style="justify-content:center">鍊煎緱淇¤禆鐨勫搧鐗?/div>
+  <div class="brand-logos">
+    <span class="brand-logo">Apple</span><span class="brand-logo">Samsung</span>
+    <span class="brand-logo">Huawei</span><span class="brand-logo">Sony</span>
+    <span class="brand-logo">Dyson</span><span class="brand-logo">Dior</span>
+    <span class="brand-logo">La Mer</span>
+  </div>
+</div>
+
+<!-- 鈹€鈹€ FOOTER 鈹€鈹€ -->
+<footer id="ft">
+  <div class="fg">
+    <div>
+      <div class="ff">浼橀€?em>路</em>缃戣喘</div>
+      <p class="fdesc">鍝佽川鐢熸椿锛屼粠浼橀€夊紑濮嬨€傛眹鑱氬叏鐞冨ソ鐗╋紝鍖犲績鐢勯€夋瘡涓€浠讹紝璁╂瘡涓€娆¤喘鐗╋紝閮芥垚涓虹編濂戒綋楠屻€?/p>
+    </div>
+    <div><div class="fct">璐墿</div><div class="flinks"><a href="#">鍏ㄩ儴鍟嗗搧</a><a href="#">鏂板搧涓婂競</a><a href="#">闄愭椂绉掓潃</a><a href="#">AI 鎺ㄨ崘</a></div></div>
+    <div><div class="fct">鏈嶅姟</div><div class="flinks"><a href="#">鍞悗鏈嶅姟</a><a href="#">閰嶉€佽鏄?/a><a href="#">閫€鎹㈡斂绛?/a><a href="#">鑱旂郴瀹㈡湇</a></div></div>
+    <div><div class="fct">鍏充簬</div><div class="flinks"><a href="#">鍏充簬鎴戜滑</a><a href="#">闅愮鏀跨瓥</a><a href="#">鐢ㄦ埛鍗忚</a></div></div>
+  </div>
+  <div class="fbottom">漏 2026 浼橀€夌綉璐?路 Premium Mall 路 All rights reserved</div>
+</footer>
+
+<!-- 鈹€鈹€ CART DRAWER 鈹€鈹€ -->
+<div class="cov" id="cOvr" onclick="closeCart()"></div>
+<div class="cdr" id="cDr">
+  <div class="moh"><div class="mot">鎴戠殑璐墿杞?/div><button class="moc" onclick="closeCart()">脳</button></div>
+  <div style="flex:1;overflow-y:auto;padding:0 24px" id="cIts"><div class="cempty"><div class="cempty-icon">馃洅</div><p>璐墿杞︽槸绌虹殑锛屽幓鎸戦€夊績浠ソ鐗╁惂</p></div></div>
+  <div class="cfoot" id="cFt" style="display:none">
+    <div class="ctrow"><span class="ctlabel">鍚堣</span><span class="ctprice" id="ctP">楼0</span></div>
+    <div class="ctip" id="ctIp">婊?9鍏冨厤杩愯垂</div>
+    <button class="asub" onclick="checkout()">鍘荤粨绠?鈫?/button>
+  </div>
+</div>
+
+<!-- 鈹€鈹€ DETAIL MODAL 鈹€鈹€ -->
+<div class="ov" id="dtMo" onclick="closeDt(event)">
+  <div class="mo" onclick="event.stopPropagation()">
+    <div class="moh"><div class="mot">鍟嗗搧璇︽儏</div><button class="moc" onclick="closeDt()">脳</button></div>
+    <div class="mob">
+      <div class="dg">
+        <div class="diw"><img class="dimg" id="dtImg" src="" alt=""></div>
+        <div>
+          <div class="dname" id="dtN"></div>
+          <div class="ddesc" id="dtDesc"></div>
+          <div class="dpw"><span class="dp" id="dtP2"></span><span class="dorig" id="dtOrig"></span></div>
+          <div class="dmeta">
+            <div class="dmeta-i"><span>搴撳瓨</span><strong id="dtSt"></strong></div>
+            <div class="dmeta-i"><span>閿€閲?/span><strong id="dtSal"></strong></div>
+          </div>
+          <div class="dacts">
+            <button class="btn-ghost" onclick="togFav()">鈽?鏀惰棌</button>
+            <button class="btn-primary" onclick="addFromDt()">鍔犲叆璐墿杞?/button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 鈹€鈹€ AUTH MODAL 鈹€鈹€ -->
+<div class="ov" id="auMo" onclick="closeAu(event)">
+  <div class="mo am" onclick="event.stopPropagation()">
+    <div class="moh"><div class="mot">鐧诲綍 / 娉ㄥ唽</div><button class="moc" onclick="closeAu()">脳</button></div>
+    <div class="mob">
+      <div class="atabs">
+        <button class="atab active" id="tLi" onclick="swAu('li')">鐧诲綍</button>
+        <button class="atab" id="tRe" onclick="swAu('re')">娉ㄥ唽</button>
+      </div>
+      <div id="liF">
+        <div class="fg"><label class="fl">閭鍦板潃</label><input class="fi" type="email" id="liE" placeholder="your@email.com"></div>
+        <div class="fg"><label class="fl">楠岃瘉鐮?/label>
+          <div class="frow">
+            <input class="fi" type="text" id="liC" placeholder="6浣嶉獙璇佺爜" maxlength="6">
+            <button class="bs" id="liB" onclick="sndCd('li')">鑾峰彇楠岃瘉鐮?/button>
+          </div>
+        </div>
+        <button class="asub" onclick="doLi()">鐧诲綍</button>
+        <p class="atip">鐧诲綍鍗冲悓鎰忋€?a href="#">鐢ㄦ埛鍗忚</a>銆嬪拰銆?a href="#">闅愮鏀跨瓥</a>銆?/p>
+      </div>
+      <div id="reF" style="display:none">
+        <div class="fg"><label class="fl">閭鍦板潃</label><input class="fi" type="email" id="reE" placeholder="your@email.com"></div>
+        <div class="fg"><label class="fl">楠岃瘉鐮?/label>
+          <div class="frow">
+            <input class="fi" type="text" id="reC" placeholder="6浣嶉獙璇佺爜" maxlength="6">
+            <button class="bs" id="reB" onclick="sndCd('re')">鑾峰彇楠岃瘉鐮?/button>
+          </div>
+        </div>
+        <button class="asub" onclick="doRe()">娉ㄥ唽</button>
+        <p class="atip">娉ㄥ唽鍗冲悓鎰忋€?a href="#">鐢ㄦ埛鍗忚</a>銆嬪拰銆?a href="#">闅愮鏀跨瓥</a>銆?/p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 鈹€鈹€ ORDER SUCCESS 鈹€鈹€ -->
+<div class="ov" id="orMo" onclick="closeOr()">
+  <div class="mo am" onclick="event.stopPropagation()">
+    <div class="moh"><div class="mot">涓嬪崟鎴愬姛</div><button class="moc" onclick="closeOr()">脳</button></div>
+    <div class="mob" id="orB"></div>
+  </div>
+</div>
+
+<!-- 鈹€鈹€ TOAST 鈹€鈹€ -->
+<div class="tc" id="toC"></div>
+
+<script>
+// 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?CONFIG 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?const API   = 'http://localhost:8080/api';
+const TOKEN = localStorage.getItem('mall_t') || null;
+const USER  = TOKEN ? JSON.parse(localStorage.getItem('mall_u') || '{}') : null;
+
+// Unsplash 鍏綉鐪熷疄鍥剧墖 鈥?宸查€氳繃 web_fetch HTTP 200 楠岃瘉
+const UNSPLASH = {
+  hero:   'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=2000&q=85',
+  // 鍟嗗搧鍒嗙被鍥?  cats: [
+    'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300&q=80', // 鎵嬫満
+    'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=300&q=80', // 鐢佃剳
+    'https://images.unsplash.com/photo-1556656793-08538906a9f8?w=300&q=80',   // 鐢靛瓙
+    'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300&q=80', // 缇庡
+    'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=300&q=80',   // 瀹跺眳
+    'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=300&q=80', // 椋熷搧
+  ],
+  // 鍟嗗搧鍥撅紙瀵瑰簲鍚庣 product id 1~8 闅忔満鎶斤級
+  prods: [
+    'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=85',  // 鎵嬭〃
+    'https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&q=85',  // 杩愬姩闉?    'https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=600&q=85', // 鎶よ偆鍝?    'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=85',  // 杩愬姩绾㈤瀷
+    'https://images.unsplash.com/photo-1560343090-f0409e92791a?w=600&q=85',  // 鎵嬭〃2
+    'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=600&q=85', // 鐩告満
+    'https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=600&q=85', // 鑰虫満
+    'https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600&q=85', // 鑰冲
+    'https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=600&q=85',  // 甯嗗竷闉?    'https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=600&q=85',  // Apple Watch
+    'https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&q=85', // 鐪奸暅
+    'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&q=85',  // 璺戦瀷
+  ],
+};
+
+// 鍟嗗搧 id 鈫?Unsplash 鍥剧墖鏄犲皠锛堝浐瀹?seed锛?const prodImg = (id) => {
+  const idx = ((id - 1) % UNSPLASH.prods.length);
+  return UNSPLASH.prods[idx] || UNSPLASH.prods[0];
+};
+
+let cart = [], products = [], skList = [], aiList = [];
+let dtP = null;
+
+const $ = (s) => document.querySelector(s);
+const $$ = (s) => document.querySelectorAll(s);
+
+// 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?INIT 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?document.addEventListener('DOMContentLoaded', () => {
+  renderAuth();
+  loadCat();
+  loadProds();
+  loadSk();
+  if (TOKEN) loadCart();
+  loadAI();
+  setCD();
+});
+
+// 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?AUTH 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?function renderAuth() {
+  const el = $('#authA');
+  if (TOKEN && USER) {
+    const ini = (USER.email || USER.phone || 'U').charAt(0).toUpperCase();
+    el.outerHTML = `<div style="position:relative">
+      <div class="uav" onclick="togUM(event)">${ini}</div>
+      <div class="udr" id="uM">
+        <div class="ud-info"><div class="ud-email">${USER.email || USER.phone}</div><div class="ud-id">UID: ${USER.userId || USER.id}</div></div>
+        <div class="udi">馃懁 涓汉涓績</div>
+        <div class="udi">馃摝 鎴戠殑璁㈠崟</div>
+        <div class="ud-div"></div>
+        <div class="udi dg" onclick="logout()">馃毆 閫€鍑虹櫥褰?/div>
+      </div>
+    </div>`;
+  } else {
+    el.outerHTML = `<button class="btn-primary" onclick="openAu('li')">鐧诲綍</button>`;
+  }
+}
+
+function togUM(e) {
+  e.stopPropagation();
+  const m = $('#uM');
+  m.classList.toggle('active');
+  const fn = (ev) => { if (!ev.target.closest('[style*="position:relative"]')) { m.classList.remove('active'); document.removeEventListener('click', fn); } };
+  if (m.classList.contains('active')) setTimeout(() => document.addEventListener('click', fn), 0);
+}
+
+function logout() {
+  localStorage.removeItem('mall_t');
+  localStorage.removeItem('mall_u');
+  location.reload();
+}
+
+function openAu(tab) { $('#auMo').classList.add('active'); swAu(tab || 'li'); }
+function closeAu(e) { if (!e || e.target === e.currentTarget) $('#auMo').classList.remove('active'); }
+
+function swAu(tab) {
+  $('#tLi').classList.toggle('active', tab === 'li');
+  $('#tRe').classList.toggle('active', tab === 're');
+  $('#liF').style.display = tab === 'li' ? 'block' : 'none';
+  $('#reF').style.display = tab === 're' ? 'block' : 'none';
+}
+
+async function sndCd(type) {
+  const email = type === 'li' ? $('#liE').value.trim() : $('#reE').value.trim();
+  if (!email) { toast('璇疯緭鍏ラ偖绠?, 'e'); return; }
+  try {
+    await fetch(`${API}/user/sendCode`, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ email }) });
+    toast('楠岃瘉鐮佸凡鍙戦€?, 's');
+    const btn = $(type === 'li' ? '#liB' : '#reB');
+    let n = 60; btn.disabled = true;
+    const id = setInterval(() => { n--; btn.textContent = n > 0 ? `${n}s` : '鑾峰彇楠岃瘉鐮?; if (n <= 0) { clearInterval(id); btn.disabled = false; } }, 1000);
+  } catch(e) { toast('鍙戦€佸け璐?, 'e'); }
+}
+
+async function doLi() {
+  const email = $('#liE').value.trim(), code = $('#liC').value.trim();
+  if (!email || !code) { toast('璇峰～鍐欏畬鏁?, 'e'); return; }
+  try {
+    const r = await fetch(`${API}/user/login`, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({email, code}) });
+    const j = await r.json();
+    if (j.code === 200) {
+      const token = j.data && j.data.token ? j.data.token : j.data;
+      localStorage.setItem('mall_t', token);
+      localStorage.setItem('mall_u', JSON.stringify(j.data || {token}));
+      closeAu(); renderAuth(); loadCart(); loadAI();
+      toast('鐧诲綍鎴愬姛锛屾杩庡洖鏉ワ紒', 's');
+    } else { toast(j.message || '鐧诲綍澶辫触', 'e'); }
+  } catch(e) { toast('鐧诲綍澶辫触', 'e'); }
+}
+
+async function doRe() {
+  const email = $('#reE').value.trim(), code = $('#reC').value.trim();
+  if (!email || !code) { toast('璇峰～鍐欏畬鏁?, 'e'); return; }
+  try {
+    const r = await fetch(`${API}/user/login`, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({email, code}) });
+    const j = await r.json();
+    if (j.code === 200) {
+      const token = j.data && j.data.token ? j.data.token : j.data;
+      localStorage.setItem('mall_t', token);
+      localStorage.setItem('mall_u', JSON.stringify(j.data || {token}));
+      closeAu(); renderAuth(); loadCart(); loadAI();
+      toast('娉ㄥ唽鎴愬姛锛屾杩庡姞鍏ワ紒', 's');
+    } else { toast(j.message || '娉ㄥ唽澶辫触', 'e'); }
+  } catch(e) { toast('娉ㄥ唽澶辫触', 'e'); }
+}
+
+// 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?CATEGORIES 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?async function loadCat() {
+  try {
+    const r = await fetch(`${API}/category/list`);
+    const j = await r.json();
+    if (j.code !== 200) return;
+    const catIcons = ['馃摫','馃捇','馃攲','馃拕','馃彔','馃','馃憲','馃摎','馃幃','馃弸锔?,'馃帹','馃洀锔?];
+    $('#catR').innerHTML = j.data.map((c, i) =>
+      `<a class="cat-card" href="#prods" onclick="loadProds(${c.id})">
+        <img class="cat-img" src="${UNSPLASH.cats[i % UNSPLASH.cats.length]}" alt="${c.name}" loading="lazy" onerror="this.style.display='none'">
+        <div class="cat-info">
+          <div class="cat-name">${c.name}</div>
+          <div class="cat-count">${catIcons[i % catIcons.length]} 绮鹃€?/div>
+        </div>
+      </a>`).join('');
+  } catch(e) {}
+}
+
+// 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?PRODUCTS 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?async function loadProds(catId) {
+  const url = catId ? `${API}/product/list?page=1&size=8&categoryId=${catId}` : `${API}/product/list?page=1&size=8`;
+  try {
+    const r = await fetch(url);
+    const j = await r.json();
+    if (j.code !== 200) return;
+    products = j.data.records || [];
+    renderProds(products);
+  } catch(e) {
+    $('#pG').innerHTML = '<p style="color:var(--text3);grid-column:1/-1;text-align:center;padding:80px;font-size:13px">鍟嗗搧鍔犺浇澶辫触锛岃纭繚鍚庣杩愯涓?(localhost:8080)</p>';
+  }
+}
+
+function renderProds(list) {
+  const g = $('#pG');
+  if (!list || list.length === 0) { g.innerHTML = '<p style="color:var(--text3);grid-column:1/-1;text-align:center;padding:80px">璇ュ垎绫绘殏鏃犲晢鍝?/p>'; return; }
+  g.innerHTML = list.map((p, i) => {
+    const badges = [{t:'sk',text:'绉掓潃'},{t:'hot',text:'鐑崠'},{t:'new',text:'鏂板搧'}];
+    const badge = badges[i % 3];
+    const sales = p.salesCount ? (p.salesCount > 999 ? (p.salesCount/1000).toFixed(1)+'k' : p.salesCount) : '999';
+    return `<div class="pcard" style="animation-delay:${i*.06}s" onclick="openDt(${p.id})">
+      <div class="piw">
+        <img class="pimg" src="${prodImg(p.id)}" alt="${p.name}" loading="lazy">
+        <div class="p-overlay"></div>
+        <span class="pbadge ${badge.t}">${badge.text}</span>
+        <button class="ppfav" onclick="event.stopPropagation();togFavP(${p.id},this)">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </button>
+        <div class="p-actions">
+          <button class="pact" onclick="event.stopPropagation();qAdd(${p.id})">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            鍔犺喘
+          </button>
+          <button class="pact" onclick="event.stopPropagation();openDt(${p.id})">
+            <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            璇︽儏
+          </button>
+        </div>
+      </div>
+      <div class="pinfo">
+        <div class="pcat">绮鹃€夊ソ鐗?/div>
+        <div class="pname">${p.name}</div>
+        <div class="prating">
+          <span class="pstars">鈽呪槄鈽呪槄鈽?/span>
+          <span class="prc">${sales}+浜鸿喘</span>
+        </div>
+        <div class="pbottom">
+          <div>
+            <span class="pprice">楼${p.price}</span>
+            ${p.originalPrice ? `<span class="porig">楼${p.originalPrice}</span>` : ''}
+          </div>
+        </div>
+        ${p.stock !== undefined ? `<div class="pstock">鍓╀綑 <span>${p.stock}</span> 浠?/div>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?SECKILL 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?async function loadSk() {
+  try {
+    const r = await fetch(`${API}/seckill/list`);
+    const j = await r.json();
+    if (j.code === 200 && j.data && j.data.length > 0) { skList = j.data; renderSk(skList); }
+  } catch(e) {}
+}
+
+function renderSk(list) {
+  $('#skG').innerHTML = list.slice(0, 4).map(p =>
+    `<div class="skcard" onclick="openDt(${p.productId})">
+      <img class="skimg" src="${prodImg(p.productId)}" alt="${p.name}" loading="lazy">
+      <div class="skinfo">
+        <div class="skn">${p.name}</div>
+        <div><span class="skprice">楼${p.seckillPrice}</span><span class="skor">楼${p.originalPrice || Math.round(p.seckillPrice*1.6)}</span></div>
+        <div class="skst">鍓╀綑 <span>${p.remainStock}</span> 浠?/div>
+      </div>
+    </div>`).join('');
+}
+
+function setCD() {
+  function tick() {
+    const now = new Date(), tgt = new Date();
+    tgt.setHours(20, 0, 0, 0);
+    if (now > tgt) { tgt.setDate(tgt.getDate() + 1); tgt.setHours(10, 0, 0, 0); }
+    const d = tgt - now;
+    $('#cd-h').textContent = String(Math.floor(d/3600000)).padStart(2,'0');
+    $('#cd-m').textContent = String(Math.floor((d%3600000)/60000)).padStart(2,'0');
+    $('#cd-s').textContent = String(Math.floor((d%60000)/1000)).padStart(2,'0');
+  }
+  tick(); setInterval(tick, 1000);
+}
+
+// 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?AI 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?async function loadAI() {
+  const g = $('#aiG');
+  if (!TOKEN) {
+    $('#aiD').textContent = '鐧诲綍鍚庤В閿佸熀浜庝綘鍋忓ソ鐨?AI 鍟嗗搧鎺ㄨ崘';
+    g.innerHTML = [0,1,2,3,4].map(i => `<div class="aicard" style="opacity:.4">
+      <img class="aicard-img" src="${UNSPLASH.prods[i % UNSPLASH.prods.length]}" alt="" loading="lazy">
+      <div class="aibody">
+        <div class="aicat">鉁?AI 鎺ㄨ崘</div>
+        <div class="aipname">鐧诲綍鍚庤В閿?AI 鎺ㄨ崘</div>
+        <div class="aiprice">楼???</div>
+      </div>
+    </div>`).join('');
+    return;
+  }
+  $('#aiD').textContent = 'DeepSeek 鏍规嵁浣犵殑鍋忓ソ绮鹃€夋帹鑽?;
+  $('#aiR').style.display = '';
+  try {
+    const r = await fA(`${API}/product/recommend?limit=5`);
+    const j = await r.json();
+    aiList = (j.code === 200 && j.data && j.data.length > 0) ? j.data : products.slice(0, 5);
+    renderAI(aiList);
+  } catch(e) { aiList = products.slice(0, 5); renderAI(aiList); }
+}
+
+function renderAI(list) {
+  $('#aiG').innerHTML = list.map(p =>
+    `<div class="aicard" onclick="openDt(${p.id})">
+      <img class="aicard-img" src="${prodImg(p.id)}" alt="${p.name}" loading="lazy">
+      <div class="aibody">
+        <div class="aicat">鉁?AI 鎺ㄨ崘</div>
+        <div class="aipname">${p.name}</div>
+        <div class="aiprice">楼${p.price}</div>
+        <div class="aitag">鉁?DeepSeek</div>
+      </div>
+    </div>`).join('');
+}
+
+// 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?DETAIL 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?async function openDt(id) {
+  try {
+    const r = await fetch(`${API}/product/detail/${id}`);
+    const j = await r.json();
+    if (j.code !== 200) { toast('鍔犺浇澶辫触', 'e'); return; }
+    dtP = j.data;
+    $('#dtImg').src = prodImg(id);
+    $('#dtN').textContent = j.data.name;
+    $('#dtDesc').textContent = j.data.description || '浼樿川鍟嗗搧锛屽尃蹇冪攧閫夛紝婧愯嚜瀵圭編濂界敓娲荤殑杩芥眰锛屾瘡涓€澶勭粏鑺傞兘缁忚繃绮惧績鎵撶（锛屼负浣犲甫鏉ラ潪鍑′綋楠屻€?;
+    $('#dtP2').textContent = `楼${j.data.price}`;
+    const orig = $('#dtOrig');
+    if (j.data.originalPrice) { orig.textContent = `楼${j.data.originalPrice}`; orig.style.display = 'inline'; }
+    else { orig.style.display = 'none'; }
+    $('#dtSt').textContent = j.data.stock !== undefined ? `${j.data.stock} 浠禶 : '鍏呰冻';
+    $('#dtSal').textContent = (j.data.salesCount || Math.floor(Math.random()*500+100)) + ' 浠?;
+    $('#dtMo').classList.add('active');
+  } catch(e) { toast('鍔犺浇澶辫触', 'e'); }
+}
+
+function closeDt(e) { if (!e || e.target === e.currentTarget) $('#dtMo').classList.remove('active'); }
+
+function addFromDt() {
+  if (!TOKEN) { closeDt(); openAu('li'); return; }
+  if (!dtP) return;
+  addToCart(dtP.id, 1);
+  closeDt();
+}
+
+function togFav() {
+  if (!TOKEN) { closeDt(); openAu('li'); return; }
+  if (!dtP) return;
+  const btn = $('#dtFav');
+  const isFav = btn && btn.classList.contains('on');
+  fetch(`${API}/favorite/toggle?productId=${dtP.id}`, { method:'POST', headers:{'Authorization':'Bearer '+TOKEN} })
+    .then(r => r.json()).then(j => {
+      if (j.code === 200) {
+        const fav = j.data && j.data.favorited;
+        if (btn) btn.classList.toggle('on', fav);
+        toast(fav ? '宸叉敹钘? : '宸插彇娑?, 's');
+      } else { toast(j.message || '鎿嶄綔澶辫触', 'e'); }
+    }).catch(() => toast('鎿嶄綔澶辫触', 'e'));
+}
+
+async function togFavP(id, btn) {
+  if (!TOKEN) { openAu('li'); return; }
+  btn.classList.toggle('on');
+  try { await fA(`${API}/favorite/toggle?productId=${id}`, { method:'POST' }); toast(btn.classList.contains('on')?'宸叉敹钘?:'宸插彇娑?,'s'); }
+  catch(e) { toast('鎿嶄綔澶辫触','e'); }
+}
+
+// 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?CART 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?async function loadCart() {
+  if (!TOKEN) return;
+  try {
+    const r = await fA(`${API}/cart/list`);
+    const j = await r.json();
+    if (j.code === 200) { cart = j.data || []; upBadge(); }
+  } catch(e) {}
+}
+
+async function addToCart(pid, qty) {
+  if (!TOKEN) { openAu('li'); return; }
+  try {
+    const r = await fA(`${API}/cart/add`, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ productId:pid, quantity:qty }) });
+    const j = await r.json();
+    if (j.code === 200) { await loadCart(); toast('宸插姞鍏ヨ喘鐗╄溅', 's'); }
+    else { toast(j.message || '娣诲姞澶辫触', 'e'); }
+  } catch(e) { toast('娣诲姞澶辫触', 'e'); }
+}
+
+async function qAdd(id) { await addToCart(id, 1); }
+
+function upBadge() {
+  const b = $('#cBadge');
+  const n = cart.reduce((s, i) => s + (i.quantity||0), 0);
+  b.textContent = n; b.style.display = n > 0 ? 'flex' : 'none';
+}
+
+function openCart() { $('#cOvr').classList.add('active'); $('#cDr').classList.add('active'); renderCart(); }
+function closeCart() { $('#cOvr').classList.remove('active'); $('#cDr').classList.remove('active'); }
+
+function renderCart() {
+  const its = $('#cIts'), ft = $('#cFt');
+  if (!cart || cart.length === 0) { its.innerHTML = '<div class="cempty"><div class="cempty-icon">馃洅</div><p>璐墿杞︽槸绌虹殑锛屽幓鎸戦€夊績浠ソ鐗╁惂</p></div>'; ft.style.display = 'none'; return; }
+  ft.style.display = 'block';
+  let total = 0;
+  its.innerHTML = cart.map((item, i) => {
+    total += (item.price||0) * (item.quantity||0);
+    return `<div class="cit">
+      <img class="ciimg" src="${item.image || prodImg(item.productId||i+1)}" alt="${item.name||''}" loading="lazy">
+      <div class="ciinfo">
+        <div class="ciname">${item.name || '鍟嗗搧'+(i+1)}</div>
+        <div class="ciprice">楼${item.price}</div>
+        <div class="cqty">
+          <button class="qb" onclick="chgQty(${item.productId},-1)">鈭?/button>
+          <span class="qn">${item.quantity||0}</span>
+          <button class="qb" onclick="chgQty(${item.productId},1)">+</button>
+        </div>
+      </div>
+      <button class="cdel" onclick="rmItem(${item.productId})">脳</button>
+    </div>`;
+  }).join('');
+  $('#ctP').textContent = `楼${total.toFixed(2)}`;
+  $('#ctIp').textContent = total >= 99 ? '鉁?宸插厤杩愯垂' : `杩樺樊 楼${(99-total).toFixed(2)} 鍏嶈繍璐筦;
+}
+
+async function chgQty(pid, delta) {
+  const item = cart.find(i => i.productId === pid);
+  if (!item) return;
+  const nq = (item.quantity||0) + delta;
+  if (nq < 1) { await rmItem(pid); return; }
+  try {
+    await fA(`${API}/cart/updateQuantity`, { method:'POST', body: `productId=${pid}&quantity=${nq}` });
+    item.quantity = nq; renderCart(); upBadge();
+  } catch(e) { toast('淇敼澶辫触','e'); }
+}
+
+async function rmItem(pid) {
+  try {
+    await fA(`${API}/cart/remove`, { method:'POST', body: `productId=${pid}` });
+    cart = cart.filter(i => i.productId !== pid); renderCart(); upBadge();
+    toast('宸茬Щ闄?,'s');
+  } catch(e) { toast('绉婚櫎澶辫触','e'); }
+}
+
+async function checkout() {
+  if (!cart || cart.length === 0) { toast('璐墿杞︽槸绌虹殑','e'); return; }
+  // 鍏堣幏鍙栭粯璁ゅ湴鍧€
+  let addrId = 0;
+  try {
+    const ar = await fA(`${API}/address/list`);
+    const aj = await ar.json();
+    if (aj.code === 200 && aj.data && aj.data.length > 0) {
+      const def = aj.data.find(a => a.isDefault === 1) || aj.data[0];
+      addrId = def.id;
+    } else {
+      toast('璇峰厛娣诲姞鏀惰揣鍦板潃','e'); return;
+    }
+  } catch(e) { toast('鑾峰彇鍦板潃澶辫触','e'); return; }
+
+  toast('姝ｅ湪鍒涘缓璁㈠崟鈥?);
+  try {
+    const r = await fA(`${API}/order/create`, { method:'POST', body: JSON.stringify({ addressId: addrId }) });
+    const j = await r.json();
+    if (j.code === 200) { closeCart(); showOrd(j.data); cart = []; upBadge(); }
+    else { toast(j.message || '涓嬪崟澶辫触','e'); }
+  } catch(e) { toast('涓嬪崟澶辫触','e'); }
+}
+
+function showOrd(o) {
+  $('#orB').innerHTML = `
+    <div class="osi">馃帀</div>
+    <div class="osti">璁㈠崟鍒涘缓鎴愬姛锛?/div>
+    <div class="oss">鎰熻阿鎮ㄧ殑璐拱锛屽晢鍝佸皢灏藉揩鍙戣揣</div>
+    <div class="odc">
+      <div class="odr"><span class="odl">璁㈠崟鍙?/span><span class="odv">${o.orderNo}</span></div>
+      <div class="odr"><span class="odl">瀹炰粯閲戦</span><span class="odv" style="color:var(--accent)">楼${o.totalAmount}</span></div>
+      <div class="odr"><span class="odl">杩愯垂</span><span class="odv">${o.freightAmount==0?'鍏嶈繍璐?:'楼'+o.freightAmount}</span></div>
+      <div class="odr"><span class="odl">璁㈠崟鐘舵€?/span><span class="odv">寰呮敮浠?/span></div>
+    </div>
+    <button class="asub" onclick="closeOr()">濂界殑</button>`;
+  $('#orMo').classList.add('active');
+}
+function closeOr() { $('#orMo').classList.remove('active'); }
+
+// 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?UTILS 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?async function fA(url, opts = {}) {
+  const h = { ...(opts.headers||{}), 'Authorization': 'Bearer ' + TOKEN };
+  if (opts.body && !String(h['Content-Type']).includes('multipart')) h['Content-Type'] = 'application/json';
+  return fetch(url, { ...opts, headers: h });
+}
+
+function toast(msg, type = '') {
+  const c = $('#toC'), t = document.createElement('div');
+  t.className = 't' + (type ? ' ' + type : '');
+  t.textContent = msg; c.appendChild(t);
+  setTimeout(() => { t.style.animation = 'gg .3s ease-in forwards'; setTimeout(() => t.remove(), 300); }, 2500);
+}
+</script>
+</body>
+</html>

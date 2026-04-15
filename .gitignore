@@ -1,0 +1,32 @@
+# Compiled classpath
+target/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.ipr
+*.iws
+.project
+.classpath
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Application
+application-local.yml
+application-dev.yml
+*.bak
+
+# Maven wrapper (optional, include if needed)
+!.mvn/wrapper/maven-wrapper.jar
+
+# Environment secrets
+.env
+*.env
